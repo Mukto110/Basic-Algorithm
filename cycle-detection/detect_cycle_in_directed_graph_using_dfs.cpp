@@ -2,7 +2,7 @@
 using namespace std;
 vector<int> adj_list[105];
 bool visited[105];
-int pathVisit[105];
+bool pathVisit[105];
 bool cycle;
 
 void dfs(int src)
@@ -32,6 +32,7 @@ int main()
         adj_list[a].push_back(b);
     }
     memset(visited, false, sizeof(visited));
+    memset(pathVisit, false, sizeof(pathVisit));
     cycle = false;
     for (int i = 0; i < n; i++)
     {
